@@ -1,7 +1,7 @@
-#Scissors
+#                                                   Scissors
 A url shortening app 
 
-###Technologies
-*_html_
+### Technologies
+* _html_
 &
-*_css_
+* _css_
