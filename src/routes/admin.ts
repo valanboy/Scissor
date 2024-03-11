@@ -4,10 +4,7 @@ const router = express.Router()
 
 const app = express()
 
-router.get("/admin", (req, res)=>{
-    res.render("dashboard", {title:"dashboard",
-    layout:"./layouts/adminLayout"})
-})
+router.get("/admin", )
 
 
 

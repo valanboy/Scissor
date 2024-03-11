@@ -6,7 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 const app = (0, express_1.default)();
-router.get("/admin/dashboard", (req, res) => {
-    res.render("dashboard", { title: "dashboard" });
-});
+router.get("/admin");
 module.exports = router;

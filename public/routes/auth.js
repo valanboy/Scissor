@@ -5,13 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
+const authController = require("../controller/authController");
 const app = (0, express_1.default)();
-router.get("/", (req, res) => {
-    res.render("index", { title: "home page" });
+router.get("/login", authController.login_GET);
+router.post("/login", (req, res) => {
 });
-router.get("/login", (req, res) => {
-    res.render('login&registration', { title: "login",
-        layout: "./layouts/loginLayout"
-    });
+router.post("/signup", (req, res) => {
 });
 module.exports = router;

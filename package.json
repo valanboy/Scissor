@@ -2,7 +2,7 @@
   "name": "altschool_v2_3rdsem_exam_backend",
   "version": "1.0.0",
   "description": "altschool capstone project",
-  "main": "app.js",
+  "main": "public/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",

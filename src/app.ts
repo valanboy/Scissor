@@ -1,12 +1,14 @@
-import express from "express"
+import express, {Express, Request, Response} from "express"
 import dotenv from "dotenv"
+dotenv.config()
+
 const expressLayout = require('express-ejs-layouts');
 const auth = require("./routes/auth")
 const admin = require("./routes/admin")
 
 dotenv.config()
 
-const app = express();
+const app:Express = express();
 const port = process.env.PORT || 3000
 
 //static files
@@ -29,7 +31,7 @@ app.set('view engine', 'ejs')
 
 
 //routing to the default homepage
-app.get("/", (req, res)=>{
+app.get("/", (req:Request, res:Response)=>{
     res.render("index", {title: "home page"})
 }) 
 
