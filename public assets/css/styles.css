@@ -5,8 +5,130 @@
 }
 
 body {
+  min-height: 100vh;
+  width: 100%;
   font-family: "gilroy-medium", sanserif;
   line-height: 1.5;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px rgb(0, 0, 0, 0.3);
+}
+
+.container .loginform {
+  padding: 2rem;
+}
+.container .registrationform {
+  padding: 2rem;
+}
+
+.loginform h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #005ae2;
+}
+.registrationform h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #005ae2;
+}
+
+
+.loginform input, .registrationform input {
+  height: 60px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1.3rem;
+}
+
+.loginform input:hover{
+  box-shadow: 0 1px 0 rgb(0, 0, 0, 0.2);
+}
+.registrationform input:hover{
+  box-shadow: 0 1px 0 rgb(0, 0, 0, 0.2);
+}
+
+.loginform a{
+  font-size: 15px;
+  color: #005ae2;
+  text-decoration: none;
+}
+
+.loginform a:hover{
+  text-decoration: underline;
+}
+
+.container .registrationform{
+  display: none;
+}
+
+#check:checked ~ .registrationform{
+  display: block;
+}
+#check:checked ~ .loginform{
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+.loginform input.button{
+ color: #fff;
+ background: #005ae2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.registrationform input.button{
+ color: #fff;
+ background: #005ae2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.loginform input.button:hover{
+  background: #0065fe;
+}
+.registrationform input.button:hover{
+  background: #0065fe;
+}
+
+.signup{
+  font-size: 16px;
+  text-align: center;
+}
+
+.signup label{
+color: #005ae2;
+cursor: pointer;
+}
+
+.signup label:hover{
+  text-decoration: underline;
 }
 
 h1,
@@ -591,7 +713,8 @@ option {
   gap: 5px;
 }
 
-.form-text, .form-text-anchortag {
+.form-text,
+.form-text-anchortag {
   margin-top: 1rem;
   color: #3284ff;
   font-size: 0.6;
@@ -708,7 +831,8 @@ option {
 @media screen and (min-width: 1000px) {
   .optimize {
     background-color: #1e3448;
-    background-image: url("../imgs/optimize-left-bg.svg"),  url("../imgs/optimize-right-bg.svg");
+    background-image: url("../imgs/optimize-left-bg.svg"),
+      url("../imgs/optimize-right-bg.svg");
     background-position: top left, right bottom;
     background-repeat: no-repeat, no-repeat;
   }
@@ -777,7 +901,7 @@ footer {
 
 .footer-text {
   margin-top: 4rem;
-  text-align: right;
+  text-align: center;
   font-size: 14px;
 }
 
@@ -835,6 +959,3 @@ footer {
 .sidebar-close-btn {
   cursor: pointer;
 }
-
-
-
