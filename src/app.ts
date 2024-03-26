@@ -1,4 +1,5 @@
 import express, {Express, Request, Response, urlencoded} from "express"
+import path from "path"
  const db = require("./db/connectdb")
  const Dburl = require("./db/dbUrl")
 
@@ -53,7 +54,7 @@ Dburl()
 //setting our view engine to ejs
 app.set('view engine', 'ejs')
 
-app.set('views',  '../views')
+app.set('views', path.join(__dirname, 'views'));
 
 //making our app come alive
 app.listen(port, ()=>{
