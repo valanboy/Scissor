@@ -23,6 +23,13 @@ body {
   box-shadow: 0 20px 25px rgb(0, 0, 0, 0.3);
 }
 
+#error{
+  color: rgb(248, 52, 52);
+  font-size: 13px;
+  padding-left: 3%;
+  padding-bottom: 1%;
+}
+
 .container .loginform {
   padding: 2rem;
 }
@@ -30,7 +37,7 @@ body {
   padding: 2rem;
 }
 
-.loginform h2 {
+.loginform h2, h2 {
   font-size: 2rem;
   font-weight: 800;
   text-align: center;
@@ -78,12 +85,12 @@ body {
   display: none;
 }
 
-#check:checked ~ .registrationform{
+/* #check:checked ~ .registrationform{
   display: block;
 }
 #check:checked ~ .loginform{
   display: none;
-}
+} */
 
 #check{
   display: none;
@@ -261,7 +268,7 @@ nav {
   width: 100%;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 100px) {
   .logo-btn {
     display: none;
   }
@@ -840,6 +847,7 @@ option {
 
 /* footer  */
 footer {
+  margin-top: 20%;
   padding-block: 5.5rem;
   padding-block-end: 2.5rem;
 }
@@ -959,3 +967,143 @@ footer {
 .sidebar-close-btn {
   cursor: pointer;
 }
+
+#tablerow, .tabledata{
+  color: #005ae2;
+  cursor: auto;
+
+}
+
+#tabledata{
+  margin-bottom: 2rem;
+  
+}
+
+#shortenButton{
+  color: #fff;
+ background: #005ae2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-color: #f9fbfd;
+  border-radius: 6px;
+}
+
+.shrinkerFormContainer{
+
+  position:relative;
+  max-width: 700px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  width: 100%;
+}
+
+table{
+  margin-top: 4rem;
+}
+
+/* .shrinkerFormContainer2{
+padding: 2rem;
+} */
+
+ #fullUrl{
+width: 700px;
+height: 50px;
+margin-top: 2%;
+font-size: 19px;
+}
+
+#shortenButton{
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+}
+
+#h2Shorten{
+  margin-bottom: 2rem;
+  margin-right: 6rem;
+  text-align: center;
+}
+
+.positioning{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.contentTable{
+  table-layout: fixed; 
+  width: 100%;
+  margin: 5rem;
+  margin-right: 10rem;
+  font-size: 1em;
+  min-width: 500px;
+  position:sticky;
+
+}
+.contentTable thead tr{
+text-align: left;
+font-weight: bold;
+
+}
+
+.contentTable th,
+.contentTable td{
+  padding:20px 40px;
+}
+
+.contentTable td{
+  word-wrap: break-word;
+}
+
+.contentTable tbody tr td{
+  border-bottom: 1px solid #ddd;
+}
+
+.div404{
+  margin-top: 10%;
+  margin-left: -10%;
+  text-align: center;
+}
+
+.div404h3{
+  font-size: 6rem;
+  color: #005ae2;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.messages404{
+  color: #005ae2;
+  font-size: 17px;
+}
+
+.errorMssg{
+  color: rgb(248, 52, 52);
+  font-size: 13px;
+  padding-left: 3%;
+  padding-bottom: 1%;
+}
+
+.welcomeUser{
+  color: #005ae2;
+  text-align: center;
+  font-size: 24px;
+}
+
+.logoutbtn{
+  background-color: #005ae2;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  width: 80px;
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+margin-top: 1rem;
+margin-right: 2rem;
+border-radius: 10px}
