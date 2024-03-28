@@ -1,6 +1,7 @@
 import express, {Express, Request, Response, urlencoded} from "express"
  const db = require("./db/connectdb")
  const Dburl = require("./db/dbUrl")
+ import path from "path"
 
  import bodyParser from "body-parser"
 import dotenv from "dotenv"
@@ -45,6 +46,7 @@ app.use("/", adminRoute)
 app.set('layout', './layouts/layout.ejs')
 
 
+
 //connect to db after requiring file at the top
 db()
 Dburl()
@@ -52,6 +54,7 @@ Dburl()
 
 //setting our view engine to ejs
 app.set('view engine', 'ejs')
+app.set('views' , ('views'))
 
 
 //making our app come alive

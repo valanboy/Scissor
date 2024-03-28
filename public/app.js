@@ -41,6 +41,7 @@ db();
 Dburl();
 //setting our view engine to ejs
 app.set('view engine', 'ejs');
+app.set('views', ('views'));
 //making our app come alive
 app.listen(port, () => {
     console.log(`server started at port https://localhost/${port}`);
