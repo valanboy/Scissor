@@ -46,7 +46,6 @@ app.use("/", adminRoute)
 app.set('layout', './layouts/layout.ejs')
 
 
-
 //connect to db after requiring file at the top
 db()
 Dburl()
@@ -54,8 +53,7 @@ Dburl()
 
 //setting our view engine to ejs
 app.set('view engine', 'ejs')
-app.set('views' , ('views'))
-
+app.set('views', path.join(__dirname, "../views"))
 
 //making our app come alive
 app.listen(port, ()=>{

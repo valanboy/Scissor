@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db = require("./db/connectdb");
 const Dburl = require("./db/dbUrl");
+const path_1 = __importDefault(require("path"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
@@ -41,7 +42,7 @@ db();
 Dburl();
 //setting our view engine to ejs
 app.set('view engine', 'ejs');
-app.set('views', ('views'));
+app.set('views', path_1.default.join(__dirname, "../views"));
 //making our app come alive
 app.listen(port, () => {
     console.log(`server started at port https://localhost/${port}`);
