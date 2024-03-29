@@ -25,6 +25,10 @@ app.use('/js', express.static(__dirname + "public assets/imgs"))
 //initializing express-ejs-layouts
 app.use(expressLayout)
 
+//setting our view engine to ejs
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, "../views"))
+
 //allows us to use json data from req(converts json data to usable js)
 app.use(express.json())
 
@@ -49,11 +53,6 @@ app.set('layout', './layouts/layout.ejs')
 //connect to db after requiring file at the top
 db()
 Dburl()
-
-
-//setting our view engine to ejs
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, "../views"))
 
 //making our app come alive
 app.listen(port, ()=>{
