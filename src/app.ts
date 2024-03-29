@@ -24,7 +24,7 @@ app.use('/js', express.static(__dirname + "public assets/imgs"))
 
 //setting our view engine to ejs
 app.set('view engine', 'ejs')
-app.set('views', "./views")
+app.set('views', path.join(__dirname, "/views"))
 
 //initializing express-ejs-layouts
 app.use(expressLayout)

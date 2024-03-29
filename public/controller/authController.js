@@ -18,7 +18,7 @@ const createToken = (id) => {
     });
 };
 module.exports.home_GET = (req, res) => {
-    res.render('index', {
+    res.render('index.ejs', {
         title: "homepage"
     });
 };
