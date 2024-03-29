@@ -19,7 +19,7 @@ const createToken = (id: string) => {
 }
 
 module.exports.home_GET = (req: Request, res: Response) => {
-    res.render( 'index', {
+    res.render( 'index.ejs', {
         title: "homepage"
     })
 }
