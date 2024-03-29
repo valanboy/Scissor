@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db = require("./db/connectdb");
 const Dburl = require("./db/dbUrl");
-const path_1 = __importDefault(require("path"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
@@ -23,7 +22,7 @@ app.use('/imgs', express_1.default.static(__dirname + "public assets/imgs"));
 app.use('/js', express_1.default.static(__dirname + "public assets/imgs"));
 //setting our view engine to ejs
 app.set('view engine', 'ejs');
-app.set('views', path_1.default.join(__dirname, "../views"));
+app.set('views', "./views");
 //initializing express-ejs-layouts
 app.use(expressLayout);
 //allows us to use json data from req(converts json data to usable js)
