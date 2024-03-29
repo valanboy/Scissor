@@ -21,11 +21,11 @@ app.use(express_1.default.static('public assets'));
 app.use('/css', express_1.default.static(__dirname + "public assets/css"));
 app.use('/imgs', express_1.default.static(__dirname + "public assets/imgs"));
 app.use('/js', express_1.default.static(__dirname + "public assets/imgs"));
-//initializing express-ejs-layouts
-app.use(expressLayout);
 //setting our view engine to ejs
 app.set('view engine', 'ejs');
 app.set('views', path_1.default.join(__dirname, "../views"));
+//initializing express-ejs-layouts
+app.use(expressLayout);
 //allows us to use json data from req(converts json data to usable js)
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({

@@ -22,12 +22,12 @@ app.use('/imgs', express.static(__dirname + "public assets/imgs"))
 app.use('/js', express.static(__dirname + "public assets/imgs"))
 
 
-//initializing express-ejs-layouts
-app.use(expressLayout)
-
 //setting our view engine to ejs
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, "../views"))
+
+//initializing express-ejs-layouts
+app.use(expressLayout)
 
 //allows us to use json data from req(converts json data to usable js)
 app.use(express.json())

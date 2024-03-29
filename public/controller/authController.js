@@ -18,19 +18,19 @@ const createToken = (id) => {
     });
 };
 module.exports.home_GET = (req, res) => {
-    res.render('index.ejs', {
+    res.render('index', {
         title: "homepage"
     });
 };
 module.exports.login_GET = (req, res) => {
-    res.render('login.ejs', {
+    res.render('login', {
         title: "login",
         layout: "./layouts/loginLayout.ejs",
         error: ""
     });
 };
 module.exports.signup_GET = (req, res) => {
-    res.render('registration.ejs', {
+    res.render('registration', {
         title: "signup",
         layout: "./layouts/loginLayout.ejs",
         error: ""
@@ -41,7 +41,7 @@ module.exports.signup_POST = async (req, res) => {
         let { email, password, username } = req.body;
         const emailAlreadyExist = await user.findOne({ email: email });
         if (emailAlreadyExist) {
-            res.render('registration.ejs', {
+            res.render('registration', {
                 title: "signup",
                 layout: "./layouts/loginLayout.ejs",
                 error: "email already exists"
@@ -69,7 +69,7 @@ module.exports.login_POST = async (req, res) => {
         const User = await user.findOne({ email: email });
         if (!User) {
             // res.send("no user")
-            res.render("login.ejs", {
+            res.render("login", {
                 title: "login",
                 layout: "./layouts/loginLayout.ejs",
                 error: "user not found, please sign up"
@@ -87,7 +87,7 @@ module.exports.login_POST = async (req, res) => {
                 res.redirect(`/urlshrinker?username=${encodeURIComponent(User.username)}`);
             }
             else if (user && comparedPassword === false) {
-                res.render("login.ejs", {
+                res.render("login", {
                     title: "login",
                     layout: "./layouts/loginLayout.ejs",
                     error: "incorrect username or password"
@@ -104,7 +104,7 @@ module.exports.urlShrinker_GET = async (req, res) => {
     // Extract the username from the query parameters
     const username = req.query.username;
     const shortUrls = await shortUrl.find();
-    res.render('urlShrinker.ejs', {
+    res.render('urlShrinker', {
         title: "url Shrinker",
         layout: "./layouts/urlshrinkerLayout.ejs",
         shortUrls: shortUrls,
@@ -122,7 +122,7 @@ module.exports.logout_GET = async (req, res) => {
 module.exports.shorturls_GET = async (req, res) => {
     const shorturl = await shortUrl.findOne({ short: req.params.shortUrl });
     if (shorturl === null)
-        return res.render('404.ejs', {
+        return res.render('404', {
             title: "404"
         });
     shorturl.clicks++;
@@ -130,7 +130,7 @@ module.exports.shorturls_GET = async (req, res) => {
     res.redirect(shorturl.full);
 };
 module.exports.allOtherRoutes_GET = async (req, res) => {
-    res.render('404.ejs', {
+    res.render('404', {
         title: "page not found",
         layout: "./layouts/layout.ejs"
     });
