@@ -107,8 +107,10 @@ module.exports.login_POST = async (req: Request, res: Response) => {
     
          //sending the jwt token as cookie to be saved in the client browser making the req.
          res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 })
+         console.log(email,password)
 
-        res.redirect(`/urlshrinker?username=${encodeURIComponent(User.username)}`)}
+        res.redirect(`/urlshrinker?username=${encodeURIComponent(User.username)}`)
+    }
      else if(user && comparedPassword === false){
         res.render("login",{
             title: "login",

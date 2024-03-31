@@ -38,14 +38,21 @@
         </ul>
 
         <ul class="signin-links">
-          <li><a class="signin-link primary-blue-300" href="/login">Log in</a></li>
+          <li><a class="signin-link" href="/login">Log in</a></li>
         </ul>
 
-        <span class="logo-btn sidebar-open-btn"
-          ><i class="fa-solid fa-bars fa-xl" style="color: #095cec">
+        <span class="toggle_btn"
+          ><i class="fa-solid fa-bars" style="color: #005ae2;"></i>
             </i></span>
       </div>
+
+      <div class="dropdown_menu">
+        <li><a class="nav-link primary-blue-300" href="/urlshrinker">My URLs</a></li>
+        <li><a class="nav-link" href="/urlshrinker">Analytics</a></li>
+        <li><a class="signin-link" href="/login">Log in</a></li>
+      </div>
     </nav>
+    
     <header>
       <div class="header-center">
         <h1 class="header-title">
@@ -115,6 +122,20 @@
         </ul>
       </div>
     </section>
+
+    <script>
+      const toggleBtn = document.querySelector('.toggle_btn')
+      const toggleBtnIcon = document.querySelector('.toggle_btn i')
+      const dropdownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open')
+        const isOpen = dropdownMenu.classList.contains('open')
+        toggleBtnIcon.classList = isOpen
+        ?'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+      }
+    </script>
     </body>
     </html>
 
