@@ -113,14 +113,32 @@ module.exports.urlShrinker_GET = async (req, res) => {
     });
 };
 module.exports.shorturls_POST = async (req, res) => {
-    await shortUrl.create({ full: req.body.fullUrl });
-    res.redirect('/urlshrinker');
+    const fullUrl = req.body.fullUrl;
+    const longUrlExist = await shortUrl.findOne({ full: fullUrl });
+    if (longUrlExist) {
+        res.redirect('/urlshrinker');
+    }
+    else {
+        await shortUrl.create({ full: req.body.fullUrl });
+        res.redirect('/urlshrinker');
+    }
 };
 module.exports.logout_GET = async (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });
     res.redirect("/");
 };
 module.exports.shorturls_GET = async (req, res) => {
+    const username = req.query.username;
+    const shortUrls = await shortUrl.find();
+    if (req.body.fullUrl === null) {
+        res.render('urlShrinker', {
+            title: "url Shrinker",
+            layout: "./layouts/urlshrinkerLayout.ejs",
+            shortUrls: shortUrls,
+            user: username,
+            // error: "please enter your long url"
+        });
+    }
     const shorturl = await shortUrl.findOne({ short: req.params.shortUrl });
     if (shorturl === null)
         return res.render('404', {

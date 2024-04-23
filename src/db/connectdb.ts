@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 //connect to users db
-const DBUri = process.env.DBUri 
+const DBUri = process.env.DBUri
 
  const connectToMongoDB = async() => {
    try {
@@ -18,7 +18,6 @@ const DBUri = process.env.DBUri
     })
    }
 }
-
 
 
 module.exports = connectToMongoDB

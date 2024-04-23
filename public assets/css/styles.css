@@ -39,14 +39,12 @@ body {
 
 .loginform h2, h2 {
   font-size: 2rem;
-  font-weight: 800;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #005ae2;
 }
 .registrationform h2 {
   font-size: 2rem;
-  font-weight: 800;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #005ae2;
@@ -100,7 +98,7 @@ body {
  color: #fff;
  background: #005ae2;
   font-size: 1.2rem;
-  font-weight: 600;
+
   letter-spacing: 1px;
   margin-top: 1.7rem;
   cursor: pointer;
@@ -110,7 +108,7 @@ body {
  color: #fff;
  background: #005ae2;
   font-size: 1.2rem;
-  font-weight: 600;
+
   letter-spacing: 1px;
   margin-top: 1.7rem;
   cursor: pointer;
@@ -1052,7 +1050,7 @@ footer {
 
 #tablerow, .tabledata{
   color: #005ae2;
-  cursor: auto;
+  cursor: pointer;
 
 }
 
@@ -1065,7 +1063,6 @@ footer {
   color: #fff;
  background: #005ae2;
   font-size: 1.2rem;
-  font-weight: 600;
   letter-spacing: 1px;
   margin-top: 1rem;
   cursor: pointer;
@@ -1129,7 +1126,6 @@ font-size: 19px;
 }
 .contentTable thead tr{
 text-align: left;
-font-weight: bold;
 
 }
 
@@ -1192,4 +1188,8 @@ border-radius: 10px}
 
 .nav-link, .nav-link primary-blue-300, .signin-link primary-blue-300{
 font-size: 1rem;
+}
+
+.urlerror{
+  color: red;
 }
