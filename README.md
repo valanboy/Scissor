@@ -1,6 +1,8 @@
 #                                                   Scissors
 A url shortening app 
 
+# live link: https://scissor1.onrender.com
+
 ### Technologies
 * _html_
 ,
