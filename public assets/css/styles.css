@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.container-cover {
+  max-width: 982px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 body {
   min-height: 100vh;
   width: 100%;
@@ -38,7 +44,7 @@ body {
 }
 
 .loginform h2, h2 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #005ae2;
@@ -210,6 +216,8 @@ section {
   color: #0065fe;
 }
 
+
+
 /* NAV */
 
 nav {
@@ -269,7 +277,9 @@ nav {
   justify-content: center;
 }
 .dropdown_menu .signin-link:hover{
-  background: #1371ff;
+  background: white;
+  color: #005ae2;
+  border: 1px solid #005ae2;
 }
 .dropdown_menu .nav-link.primary-blue-300:hover, .dropdown_menu .nav-link:hover{
   color: #1371ff;
@@ -285,6 +295,17 @@ nav {
   color: white;
   border-radius: 10px;
   padding: 5px;
+}
+
+.signin-link{
+ transition: 0.8s;
+ border-radius: 20px;
+}
+
+.signin-link:hover{
+  background-color: white;
+  color: #005ae2;
+  border: 1px solid #005ae2;
 }
 
 .dropdown_menu .nav-link{
@@ -1053,24 +1074,31 @@ footer {
   cursor: pointer;
 
 }
-
-#tabledata{
-  margin-bottom: 2rem;
+.tablecontent{
+     max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 10px;
+  
+}
+.tabledata{
+  font-size: 0.8rem;
   
 }
 
 #shortenButton{
-  color: #fff;
+  color: white;
  background: #005ae2;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
-  margin-top: 1rem;
   cursor: pointer;
   border-color: #f9fbfd;
   border-radius: 6px;
+height: 35px;
+padding: 5px;
+width: 70px;
 }
 
-.shrinkerFormContainer{
+/* .shrinkerFormContainer{
 
   position:relative;
   max-width: 700px;
@@ -1078,55 +1106,73 @@ footer {
   left: 50%;
   transform: translate(-50%, 10%);
   width: 100%;
-}
+} */
 
-table{
-  margin-top: 4rem;
-}
 
 /* .shrinkerFormContainer2{
 padding: 2rem;
 } */
 
  #fullUrl{
-width: 700px;
-height: 50px;
-margin-top: 2%;
+width: 300px;
+height: 30px;
 font-size: 19px;
 }
 
-#shortenButton{
-  width: 100px;
-  height: 50px;
+/* #shortenButton{
+  width: 70px;
+  height: 35px;
   padding: 5px;
-}
+  margin-right: 10px;
+} */
 
 #h2Shorten{
   margin-bottom: 2rem;
-  margin-right: 6rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+
+
+
+#fullUrl, #shortenButton{
+
   text-align: center;
 }
 
-.positioning{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-left: 1rem;
+#shortenButton:active{
+ background-color: #4685e4;
+}
+
+
+.table{
+  max-width: 982;
 }
 
 .contentTable{
   table-layout: fixed; 
-  width: 100%;
-  margin: 5rem;
-  margin-right: 10rem;
+  width: 100%; 
   font-size: 1em;
-  min-width: 500px;
+  max-width: 982px;
   position:sticky;
+  margin-top: 3rem;
 
 }
 .contentTable thead tr{
 text-align: left;
 
+}
+
+.containerform{
+  display: flex;
+  align-items: center;
+}
+
+#form{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .contentTable th,
@@ -1170,21 +1216,28 @@ text-align: left;
 .welcomeUser{
   color: #005ae2;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.1rem;
+  margin-top: 3rem;
 }
 
 .logoutbtn{
   background-color: #005ae2;
   color: white;
-  font-weight: 400;
-  font-size: 16px;
+  font-size: 0.8rem;
   width: 80px;
-  height: 40px;
+  height: 35px;
   padding: 5px;
   text-align: center;
 margin-top: 1rem;
 margin-right: 2rem;
-border-radius: 10px}
+border-radius: 15px;
+transition: 0.8s;}
+
+.logoutbtn:hover{
+  background-color: white;
+  color: #005ae2;
+  border: 1px solid #005ae2;
+}
 
 .nav-link, .nav-link primary-blue-300, .signin-link primary-blue-300{
 font-size: 1rem;

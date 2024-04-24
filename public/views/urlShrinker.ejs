@@ -1,20 +1,21 @@
-<% if (!user){  %>
+<div class="container-cover"><% if (!user){  %>
     <h1 class="welcomeUser">Welcome back!</h1>
 <% } else{ %>
     <h1 class="welcomeUser">Hi <%- user %>!</h1>
 <% } %>
 
 
-<div class="shrinkerFormContainer">
 
-<div class="shrinkerFormContainer2">
-    <h2 id="h2Shorten">Shorten your URLs</h2>
-<form action="/shortUrls" method="post" id="shrinkerForm">
+    <h2 id="h2Shorten">Shorten your URL with just a click</h2>
+    <div class="containerform">
     
-<div class="positioning"><input type="url" name="fullUrl" id="fullUrl" required placeholder="enter url">
-    <input id="shortenButton" value="shorten" type="submit"></div>
+    <form action="/shortUrls" id="form" method="post">
+        <input type="url" name="fullUrl" id="fullUrl" required placeholder="enter url">
+    <input id="shortenButton" value="shorten" type="submit">
 </form>
-
+</div>
+</div>
+<div class="tablecontent">
 <table class="contentTable" >
     <thead>
         <tr id="tablerow">
@@ -28,13 +29,12 @@
     <tbody>
        <% shortUrls.forEach(shortUrl =>{ %>
         <tr>
-            <td width="5px"><a class="tabledata" href="<%= shortUrl.full %>"><%= shortUrl.full  %></a></td>
-            <td width="50px"><a class="tabledata" href="<%= shortUrl.short %>">https://scissor1.onrender.com/<%= shortUrl.short %></a></td>
-            <td width="100px" class="tabledata"> <%= shortUrl.clicks %></td>
+            <td ><a class="tabledata" href="<%= shortUrl.full %>"><%= shortUrl.full  %></a></td>
+            <td ><a class="tabledata" href="<%= shortUrl.short %>">https://scissor1.onrender.com/<%= shortUrl.short %></a></td>
+            <td class="tabledata"> <%= shortUrl.clicks %></td>
         </tr>
       <%  }) %>
         
     </tbody>
 </table>
-</div>
 </div>

@@ -7,8 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const shortid_1 = __importDefault(require("shortid"));
 const shorturlSchema = new mongoose_1.default.Schema({
     full: {
-        type: String,
-        required: true
+        type: String
     },
     short: {
         type: String,

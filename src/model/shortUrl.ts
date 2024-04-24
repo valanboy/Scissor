@@ -4,8 +4,7 @@ import shortid from "shortid";
 
 const shorturlSchema = new mongoose.Schema({
 full: {
-    type: String,
-    required: true
+    type: String
 },
 
 short: {
