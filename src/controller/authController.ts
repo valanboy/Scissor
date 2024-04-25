@@ -10,7 +10,7 @@ dotenv.config()
 const JwtSecret = process.env.JwtSecret
 
 //create json token
-const maxAge = 1 * 24 * 60 * 60
+const maxAge = 2 * 24 * 60 * 60
 const createToken = (id: string) => {
 
     return jsonwebtoken.sign({ id }, JwtSecret!, {
