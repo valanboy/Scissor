@@ -1137,12 +1137,18 @@ font-size: 19px;
   font-weight: 300;
 }
 
-
+#note{
+  font-size: 0.8rem;
+}
 
 
 #fullUrl, #shortenButton{
 
   text-align: center;
+}
+
+#fullUrl::placeholder{
+  color: #8aa9d6;
 }
 
 #shortenButton:active{
