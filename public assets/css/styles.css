@@ -1078,7 +1078,9 @@ footer {
      max-width: 1150px;
     margin: 0 auto;
     padding: 0 10px;
-  
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 .tabledata{
   font-size: 0.8rem;
@@ -1095,7 +1097,7 @@ footer {
   border-radius: 6px;
 height: 35px;
 padding: 5px;
-width: 70px;
+width: 20%;
 }
 
 /* .shrinkerFormContainer{
@@ -1114,7 +1116,7 @@ padding: 2rem;
 } */
 
  #fullUrl{
-width: 300px;
+width: 80%;
 height: 30px;
 font-size: 19px;
 }
@@ -1130,6 +1132,9 @@ font-size: 19px;
   margin-bottom: 2rem;
   text-align: center;
   margin-top: 4rem;
+  color: #005ae2;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 
@@ -1150,8 +1155,8 @@ font-size: 19px;
 }
 
 .contentTable{
-  table-layout: fixed; 
-  width: 100%; 
+  /* table-layout: fixed; 
+  width: 100%;  */
   font-size: 1em;
   max-width: 982px;
   position:sticky;
@@ -1166,6 +1171,7 @@ text-align: left;
 .containerform{
   display: flex;
   align-items: center;
+  max-width: 982px;
 }
 
 #form{
@@ -1214,7 +1220,7 @@ text-align: left;
 }
 
 .welcomeUser{
-  color: #005ae2;
+  color: #4583e0;
   text-align: center;
   font-size: 1.1rem;
   margin-top: 3rem;
