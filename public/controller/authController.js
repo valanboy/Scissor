@@ -11,7 +11,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const JwtSecret = process.env.JwtSecret;
 //create json token
-const maxAge = 3 * 24 * 60 * 60;
+const maxAge = 1 * 24 * 60 * 60;
 const createToken = (id) => {
     return jsonwebtoken_1.default.sign({ id }, JwtSecret, {
         expiresIn: maxAge
