@@ -5,7 +5,7 @@
 }
 
 .container-cover {
-  max-width: 982px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -1075,7 +1075,7 @@ footer {
 
 }
 .tablecontent{
-     max-width: 1150px;
+     max-width: 1080px;
     margin: 0 auto;
     padding: 0 10px;
     overflow-x: auto;
