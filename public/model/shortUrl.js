@@ -18,6 +18,9 @@ const shorturlSchema = new mongoose_1.default.Schema({
         type: Number,
         required: true,
         default: 0
+    },
+    useremail: {
+        type: String
     }
 });
 const shortUrl = mongoose_1.default.model('shortUrl', shorturlSchema);

@@ -30,7 +30,7 @@ router.post("/signup", limiterSignUp,authController.signup_POST)
 
 router.get("/logout", authController.logout_GET)
 
- router.get("/urlshrinker", requireAuth, checkUser , authController.urlShrinker_GET)
+ router.get("/urlshrinker", authController.urlShrinker_GET)
 
  router.post("/shortUrls", authController.shorturls_POST)
 

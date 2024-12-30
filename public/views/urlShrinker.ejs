@@ -27,13 +27,20 @@
     </thead>
 
     <tbody>
-       <% shortUrls.forEach(shortUrl =>{ %>
+        <% if(shortUrls.length === 0 ){ %>
+            <tr>
+                <td class="noUrl" >NO URLs found!</td>
+                
+            </tr> 
+       <% } else{ %>
+           <% shortUrls.forEach(shortUrl =>{ %>
         <tr>
             <td ><a class="tabledata" href="<%= shortUrl.full %>"><%= shortUrl.full  %></a></td>
             <td ><a class="tabledata" href="<%= shortUrl.short %>">https://scissor1.onrender.com/<%= shortUrl.short %></a></td>
             <td class="tabledata"> <%= shortUrl.clicks %></td>
         </tr>
       <%  }) %>
+      <% } %>
         
     </tbody>
 </table>

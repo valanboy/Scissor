@@ -1258,3 +1258,7 @@ font-size: 1rem;
 .urlerror{
   color: red;
 }
+
+.noUrl{
+  color: #005ae2;
+}

@@ -41,6 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//enable cookie parser middle-ware
 app.use(cookieParser());
 //express router
 app.use("/", authRoute)
@@ -56,4 +57,4 @@ Dburl()
 
 //making our app come alive
 app.listen(port, ()=>{
-console.log(`server started at port https://localhost/${port}`)})
+console.log(`server started at port https://localhost:${port}`)})

@@ -24,7 +24,7 @@ router.post("/login", limiter, authController.login_POST);
 router.get("/signup", authController.signup_GET);
 router.post("/signup", limiterSignUp, authController.signup_POST);
 router.get("/logout", authController.logout_GET);
-router.get("/urlshrinker", requireAuth, checkUser, authController.urlShrinker_GET);
+router.get("/urlshrinker", authController.urlShrinker_GET);
 router.post("/shortUrls", authController.shorturls_POST);
 router.get("/:shortUrl", authController.shorturls_GET);
 router.all("*", authController.allOtherRoutes_GET);
