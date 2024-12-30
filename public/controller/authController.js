@@ -10,13 +10,6 @@ const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const JwtSecret = process.env.JwtSecret;
-//create json token
-const maxAge = 2 * 24 * 60 * 60;
-const createToken = (id) => {
-    return jsonwebtoken_1.default.sign({ id }, JwtSecret, {
-        expiresIn: maxAge
-    });
-};
 module.exports.home_GET = (req, res) => {
     res.render('index.ejs', {
         title: "homepage"
@@ -51,9 +44,12 @@ module.exports.signup_POST = async (req, res) => {
             //creating a new user
             const User = await user.create({ email, username, password });
             //creating a jwt token with the call back funtion initialised a the start of the code
-            const token = createToken(User._id);
+            const token = jsonwebtoken_1.default.sign({ userId: User._id, userEmail: User.email }, JwtSecret, { expiresIn: "1d" });
             //sending the jwt token as cookie to be saved in the client browser making the req.
-            res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+            res.cookie("jwtToken", token, {
+                httpOnly: true,
+                maxAge: 24 * 60 * 60 * 1000
+            });
             await res.status(200).redirect('/login');
         }
     }
@@ -81,10 +77,13 @@ module.exports.login_POST = async (req, res) => {
             const comparedPassword = await bcryptjs_1.default.compare(password, dbpassword);
             if (User && comparedPassword === true) {
                 //creating a jwt token with the call back funtion initialised a the start of the code
-                const token = createToken(User._id);
+                const token = jsonwebtoken_1.default.sign({ userId: User._id, userEmail: User.email }, JwtSecret, { expiresIn: "1d" });
                 //sending the jwt token as cookie to be saved in the client browser making the req.
-                res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-                console.log(email, password);
+                res.cookie("jwtToken", token, {
+                    httpOnly: true,
+                    maxAge: 24 * 60 * 60 * 1000
+                });
+                console.log(email, password, req.cookies.jwtToken, JwtSecret);
                 res.redirect(`/urlshrinker?username=${encodeURIComponent(User.username)}`);
             }
             else if (user && comparedPassword === false) {
@@ -104,27 +103,42 @@ module.exports.login_POST = async (req, res) => {
 module.exports.urlShrinker_GET = async (req, res) => {
     // Extract the username from the query parameters
     const username = req.query.username;
-    const shortUrls = await shortUrl.find();
-    res.render('urlShrinker', {
-        title: "url Shrinker",
-        layout: "./layouts/urlshrinkerLayout.ejs",
-        shortUrls: shortUrls,
-        user: username
-    });
+    const token = req.cookies.jwtToken;
+    if (!token) {
+        res.status(401).json({ error: "no token" });
+        return;
+    }
+    try {
+        const decoded = jsonwebtoken_1.default.verify(token, JwtSecret);
+        const userEmail = decoded.userEmail;
+        const shortUrls = await shortUrl.find({ useremail: userEmail });
+        res.render('urlShrinker', {
+            title: "url Shrinker",
+            layout: "./layouts/urlshrinkerLayout.ejs",
+            shortUrls: shortUrls,
+            user: username
+        });
+    }
+    catch (error) {
+        return res.status(401).json({ error: "invalid token!" });
+    }
 };
 module.exports.shorturls_POST = async (req, res) => {
+    const token = req.cookies.jwtToken;
+    const decoded = jsonwebtoken_1.default.verify(token, JwtSecret);
+    const Useremail = decoded.userEmail;
     const fullUrl = req.body.fullUrl;
-    const longUrlExist = await shortUrl.findOne({ full: fullUrl });
+    const longUrlExist = await shortUrl.findOne({ useremail: Useremail, full: fullUrl });
     if (longUrlExist) {
         res.redirect('/urlshrinker');
     }
     else {
-        await shortUrl.create({ full: req.body.fullUrl });
+        await shortUrl.create({ full: req.body.fullUrl, useremail: Useremail });
         res.redirect('/urlshrinker');
     }
 };
 module.exports.logout_GET = async (req, res) => {
-    res.cookie('jwt', '', { maxAge: 1 });
+    res.cookie('jwtToken', '', { maxAge: 1 });
     res.redirect("/");
 };
 module.exports.shorturls_GET = async (req, res) => {

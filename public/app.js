@@ -34,6 +34,7 @@ app.use(express_1.default.urlencoded({
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 // parse application/json
 app.use(body_parser_1.default.json());
+//enable cookie parser middle-ware
 app.use((0, cookie_parser_1.default)());
 //express router
 app.use("/", authRoute);
@@ -45,5 +46,5 @@ db();
 Dburl();
 //making our app come alive
 app.listen(port, () => {
-    console.log(`server started at port https://localhost/${port}`);
+    console.log(`server started at port https://localhost:${port}`);
 });
