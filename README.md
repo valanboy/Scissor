@@ -1,9 +1,11 @@
 #                                                   Scissors
 A url shortening API
 
-# live link: https://scissor1.onrender.com
+## live link: https://scissor1.onrender.com
 
-### Technologies
+## API documentation: https://documenter.getpostman.com/view/29594657/2sA35HYgnq
+
+## Technologies
 * _html_
 ,
 * _css_,
@@ -13,7 +15,7 @@ A url shortening API
 * &
 * _mongodb_,
 
-##To run
+## To run
 clone project 
 cd into folder from your terminal
 open your preferred IDE
