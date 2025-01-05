@@ -22,3 +22,6 @@ A url shortening API
 ### 4. run npm install
 ### 5. run node app
 ### 6. preview html page on live-server or open on your browser
+
+## contact info
+### believegilbert20@gmail.com 
